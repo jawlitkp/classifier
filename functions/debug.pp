@@ -3,6 +3,6 @@ function classifier::debug (
   String $msg
 ) {
   if $::classifier::debug {
-    notify {$msg :}
+    notice($msg)
   }
 }
