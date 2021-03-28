@@ -3,7 +3,7 @@
 # After classification is done a number of variables are
 # considered public and can be used to access the classification
 # results.  These are `$classification`, `$classification_roles`,
-# `$data` and `$classes`.
+# `$data` and `$roles`.
 class classifier (
   Classifier::Classifications  $rules = {},
   Array[Classifier::Rolename]  $extra_roles = [],

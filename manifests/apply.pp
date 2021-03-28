@@ -1,4 +1,4 @@
-# Includes a list of classes on this node
+# Includes a list of roles on this node
 class classifier::apply(
   Array[Classifier::Rolename] $roles,
   Boolean $debug
