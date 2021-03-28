@@ -1,9 +1,9 @@
 # Includes a list of classes on this node
 class classifier::apply(
-  Array[Classifier::Classname] $classes,
+  Array[Classifier::Rolename] $roles,
   Boolean $debug
 ) {
-  $classes.each |$class| {
-    include($class)
+  $roles.each |$role| {
+    include "role::${role}"
   }
 }

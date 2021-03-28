@@ -1,7 +1,7 @@
 type Classifier::Node = Array[
   Struct[{
-    "name"    => String,
-    "classes" => Array[Classifier::Classname],
-    "data"    => Classifier::Data
+    'name'  => String,
+    'roles' => Array[Classifier::Rolename],
+    'data'  => Classifier::Data
   }]
 ]

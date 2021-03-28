@@ -1,1 +1,1 @@
-type Classifier::Matches = Enum["all", "any"]
+type Classifier::Matches = Enum['all', 'any']

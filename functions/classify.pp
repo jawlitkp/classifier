@@ -6,17 +6,17 @@ function classifier::classify (
   Classifier::Classifications $rules,
   Hash $empty = {}
 ) {
-  $classes = $rules.map |$c_name, $c_body| {
+  $roles = $rules.map |$c_name, $c_body| {
     $matching = classifier::evaluate_classification($c_body)
 
     $classification = {
-      "name"    => $c_name,
-      "classes" => $c_body["classes"] ? { Undef => [], default => $c_body["classes"] },
-      "data"    => $c_body["data"] ? { Undef => {}, default => $c_body["data"]}
+      'name'    => $c_name,
+      'roles' => $c_body["roles"] ? { Undef => [], default => $c_body["roles"] },
+      'data'    => $c_body["data"] ? { Undef => {}, default => $c_body["data"]}
     }
 
     # defaults to 'all' matching
-    if $c_body["match"] == "any" {
+    if $c_body["match"] == 'any' {
       if $matching.size > 0 {
         $classification
       } else {
@@ -31,5 +31,5 @@ function classifier::classify (
     }
   }
 
-  $classes.filter |$c| { !$c.empty }
+  $roles.filter |$c| { !$c.empty }
 }

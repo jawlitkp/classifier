@@ -13,14 +13,14 @@ class classifier::classify(
   $classification = classifier::classify($rules)
 
   # the classes extracted from the classification
-  $classification_classes = $classification.map |$c| { $c["classes"] }.flatten
+  $classification_roles = $classification.map |$c| { $c["roles"] }.flatten
 
   # data extracted and merged
   $data = $classification.reduce({}) |$r, $c| { deep_merge($r, $c["data"]) }
 
-  class{"classifier::node_data": data => $data}
+  class{'classifier::node_data': data => $data}
 
   classifier::debug("Classification result for ${trusted[certname]}: ${classifier::inspect($classification)}")
   classifier::debug("Properties derived from classification for ${trusted[certname]}: ${classifier::inspect($data)}")
-  classifier::debug("Classes derived from classification for ${trusted[certname]}: ${classification_classes}")
+  classifier::debug("Roles derived from classification for ${trusted[certname]}: ${classification_roles}")
 }
