@@ -6,6 +6,7 @@
 # `$data` and `$roles`.
 class classifier (
   Classifier::Classifications  $rules = {},
+  Array[Classifier::Classname] $extra_roles = [],
   Boolean                      $debug = false,
 ) {
 
@@ -17,8 +18,9 @@ class classifier (
   $classification = $classifier::classify::classification
   $classification_roles = $classifier::classify::classification_roles
   $data = $classifier::classify::data
-  $roles = $classification_roles
+  $roles = $classification_roles + $extra_roles
 
+  classifier::debug("Extra classes declared for ${trusted[certname]}: ${extra_roles}")
   classifier::debug("Final roles for ${trusted[certname]}: ${roles}")
 
   class{'classifier::apply':
