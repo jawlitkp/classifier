@@ -2,8 +2,8 @@
 function classifier::debug (
   String $msg
 ) {
-
-  echo {$msg :}
+  notice($msg)
+  # echo {$msg :}
   # if $::classifier::debug {
   #   notice($msg)
   # }
