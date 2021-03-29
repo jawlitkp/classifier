@@ -23,8 +23,8 @@ class classifier (
   classifier::debug("Extra classes declared for ${trusted[certname]}: ${extra_roles}")
   classifier::debug("Final roles for ${trusted[certname]}: ${roles}")
 
-  echo{"Extra classes declared for ${trusted[certname]}: ${extra_roles}":}
-  echo{"Final roles for ${trusted[certname]}: ${roles}":}
+  # echo{"Extra classes declared for ${trusted[certname]}: ${extra_roles}":}
+  # echo{"Final roles for ${trusted[certname]}: ${roles}":}
 
   class{'classifier::apply':
     roles => $roles,
