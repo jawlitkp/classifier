@@ -9,7 +9,6 @@ class classifier::classify(
   Boolean $debug
 ) {
   classifier::debug("Classification for ${trusted[certname]}: ${classifier::inspect($rules)}")
-  echo {"Classification for ${trusted[certname]}: ${classifier::inspect($rules)}":}
 
   $classification = classifier::classify($rules)
 

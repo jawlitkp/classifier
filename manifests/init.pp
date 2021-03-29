@@ -10,8 +10,6 @@ class classifier (
   Boolean                      $debug = false,
 ) {
 
-  echo {'Roles included':}
-
   class{'classifier::classify':
     rules => $rules,
     debug => $debug
