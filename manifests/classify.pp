@@ -12,7 +12,7 @@ class classifier::classify(
 
   $classification = classifier::classify($rules)
 
-  # the classes extracted from the classification
+  # the roles extracted from the classification
   $classification_roles = $classification.map |$c| { $c["roles"] }.flatten
 
   # data extracted and merged
