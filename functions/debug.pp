@@ -2,5 +2,7 @@
 function classifier::debug (
   String $msg
 ) {
-    notify{$msg:}
+  if $::classifier::debug {
+    notice($msg)
+  }
 }
