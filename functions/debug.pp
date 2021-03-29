@@ -2,5 +2,5 @@
 function classifier::debug (
   String $msg
 ) {
-    notice($msg)
+    notify{$msg:}
 }
