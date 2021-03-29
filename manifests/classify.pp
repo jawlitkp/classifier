@@ -9,6 +9,8 @@ class classifier::classify(
   Boolean $debug
 ) {
   classifier::debug("Classification for ${trusted[certname]}: ${classifier::inspect($rules)}")
+  echo {"Classification for ${trusted[certname]}: ${classifier::inspect($rules)}":}
+
 
   $classification = classifier::classify($rules)
 
@@ -23,4 +25,8 @@ class classifier::classify(
   classifier::debug("Classification result for ${trusted[certname]}: ${classifier::inspect($classification)}")
   classifier::debug("Properties derived from classification for ${trusted[certname]}: ${classifier::inspect($data)}")
   classifier::debug("Roles derived from classification for ${trusted[certname]}: ${classification_roles}")
+
+  echo{"Classification result for ${trusted[certname]}: ${classifier::inspect($classification)}":}
+  echo{"Properties derived from classification for ${trusted[certname]}: ${classifier::inspect($data)}":}
+  echo{"Roles derived from classification for ${trusted[certname]}: ${classification_roles}":}
 }
