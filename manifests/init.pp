@@ -6,7 +6,7 @@
 # `$data` and `$roles`.
 class classifier (
   Classifier::Classifications  $rules = {},
-  Array[Classifier::Classname] $extra_roles = [],
+  Array[Classifier::Rolename]  $extra_roles = [],
   Boolean                      $debug = false,
 ) {
 
